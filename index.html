@@ -55,7 +55,7 @@ a{color:inherit}
 .how{margin-top:12px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 14px 4px}
 .how h2{margin:0 0 10px;font-size:1rem}
 .how ol{list-style:none;margin:0;padding:0}
-.how li{display:flex;gap:10px;align-items:flex-start;margin-bottom:10px;font-size:.9rem}
+.how li{display:flex;gap:10px;align-items:center;margin-bottom:10px;font-size:.9rem}
 .how li i{font-style:normal;flex:none;width:24px;height:24px;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;font-size:.8rem;display:flex;align-items:center;justify-content:center}
 footer{color:var(--muted);font-size:.8rem;text-align:center;padding-block:18px calc(88px + env(safe-area-inset-bottom))}
 footer a{font-weight:600;color:var(--fg);text-decoration:none;white-space:nowrap}
@@ -94,6 +94,7 @@ footer a{font-weight:600;color:var(--fg);text-decoration:none;white-space:nowrap
 .other{display:block;width:100%;margin-top:10px;font:inherit;font-weight:700;font-size:.9rem;color:var(--accent);background:transparent;border:1.5px dashed var(--line);border-radius:12px;padding:10px;cursor:pointer}
 .other small{display:block;font-weight:500;color:var(--muted);font-size:.78rem;margin-top:2px}
 .form .fld{margin-top:10px}
+#form:not(.has-ph) #fn{padding-right:44px}
 .form .fld[hidden]{display:none}
 .form label,.form .lb{display:block;font-size:.8rem;font-weight:700;color:var(--muted);margin-bottom:4px}
 .form input,.form textarea{display:block;width:100%;font:inherit;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
@@ -150,7 +151,7 @@ branco fosco. 13,3 × 5,8 × 4,8 cm.</p>
 <footer class="wrap"><a href="https://wa.me/5511992965296?text=Ol%C3%A1!%20Vi%20a%20loja%20Piece%20of%20Geek%203D%20e%20quero%20fazer%20um%20pedido." target="_blank" rel="noopener">WhatsApp (11) 99296-5296</a><br>Preços atualizados em 24/10/2026</footer>
 <a class="fab" href="https://wa.me/5511992965296?text=Ol%C3%A1!%20Vi%20a%20loja%20Piece%20of%20Geek%203D%20e%20quero%20fazer%20um%20pedido." target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg></a>
 <div class="sheet" id="sheet" hidden><div class="in" role="dialog" aria-modal="true" aria-labelledby="sn"><button class="x" type="button" aria-label="Fechar">×</button><div class="ph"></div><div class="c"><h2 id="sn"></h2><p></p><div class="price"></div></div></div></div>
-<div class="sheet" id="form" hidden><div class="in" role="dialog" aria-modal="true" aria-labelledby="fn"><button class="x" type="button" aria-label="Fechar">×</button><div class="c form">
+<div class="sheet" id="form" hidden><div class="in" role="dialog" aria-modal="true" aria-labelledby="fn"><button class="x" type="button" aria-label="Fechar">×</button><div class="ph" id="fph"></div><div class="c form">
 <h2 id="fn"></h2><p id="fsub"></p>
 <div class="fld" id="f-size"><span class="lb">Tamanho</span><div class="sel" id="sizes"></div></div>
 <div class="fld" id="f-what"><label for="what">O que você quer?</label><textarea id="what" rows="3" placeholder="Ex: suporte de controle de videogame pra parede"></textarea></div>
@@ -164,7 +165,7 @@ branco fosco. 13,3 × 5,8 × 4,8 cm.</p>
 <p class="hint">Tem foto de referência? Mande na conversa depois de enviar.</p>
 <a class="wa" id="send" href="https://wa.me/5511992965296?text=" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>Enviar pelo WhatsApp</a>
 </div></div></div>
-<script type="application/json" id="enc-data">{"groups":[{"name":"Chaveiro Personalizado com Letra em 3D","desc":"Chaveiro personalizado com letra, ideal para identificar suas chaves ou presentear alguém especial. Material: PLA Velvet Branco. Medidas: 0,4 × 3,8 × 3,6 cm (altura × largura × profundidade).","options":[{"size":"","price":9.9,"hours":0.23,"parts":["Cor 1","Cor 2"],"extras":[{"label":"Argola de chaveiro com corrente","options":["Prata","Dourado"]}]}]},{"name":"Placa de Profissões","desc":"Placa de profissões personalizada, impressa em 3D. Uma lembrança para presentear profissionais e colegas de trabalho ou para decorar a mesa. Feita em PLA Velvet Branco, mede 1,1 × 1,4 × 1,4 cm.","options":[{"size":"","price":19.9,"hours":2.02,"parts":["Cor 1","Cor 2"],"extras":[]}]}],"colors":[{"name":"PLA Velvet Azul","hex":"#1565C0"},{"name":"PLA Velvet Branco","hex":"#F2F2F2"},{"name":"PLA Velvet Preto","hex":"#222222"}],"gram":0.7,"maxCm":18,"today":"2026-10-24","wa":"https://wa.me/5511992965296?text=","queueH":0,"perDay":8}</script>
+<script type="application/json" id="enc-data">{"groups":[{"name":"Chaveiro Personalizado com Letra em 3D","desc":"Chaveiro personalizado com letra, ideal para identificar suas chaves ou presentear alguém especial. Material: PLA Velvet Branco. Medidas: 0,4 × 3,8 × 3,6 cm (altura × largura × profundidade).","options":[{"size":"","price":9.9,"hours":0.23,"parts":["Cor 1","Cor 2"],"extras":[{"label":"Argola de chaveiro com corrente","options":["Prata","Dourado"]}],"photos":["fotos/1y8e64e32uyj.jpg?v=87651bd8","fotos/1y8e64e32uyj-1.jpg?v=9f5d4878","fotos/1y8e64e32uyj-2.jpg?v=115deba9"]}]},{"name":"Placa de Profissões","desc":"Placa de profissões personalizada, impressa em 3D. Uma lembrança para presentear profissionais e colegas de trabalho ou para decorar a mesa. Feita em PLA Velvet Branco, mede 1,1 × 1,4 × 1,4 cm.","options":[{"size":"","price":19.9,"hours":2.02,"parts":["Cor 1","Cor 2"],"extras":[],"photos":["fotos/bemzu87c5lnh.jpg?v=5e79504b","fotos/bemzu87c5lnh-1.jpg?v=0dfb39cc"]}]}],"colors":[{"name":"PLA Velvet Azul","hex":"#1565C0"},{"name":"PLA Velvet Branco","hex":"#F2F2F2"},{"name":"PLA Velvet Preto","hex":"#222222"}],"gram":0.7,"maxCm":18,"today":"2026-10-24","wa":"https://wa.me/5511992965296?text=","queueH":0,"perDay":8}</script>
 <script>(function(){
 function $(s,r){return (r||document).querySelector(s)}
 function $$(s,r){return [].slice.call((r||document).querySelectorAll(s))}
@@ -182,15 +183,17 @@ window.addEventListener('popstate',function(){if(cur)hide()});
 $$('.sheet').forEach(function(s){s.addEventListener('click',function(e){if(e.target===s||e.target.closest('.x'))close()})});
 document.addEventListener('keydown',function(e){if(e.key==='Escape'&&cur)close()});
 function el(tag,cls,txt){var n=document.createElement(tag);if(cls)n.className=cls;if(txt!=null)n.textContent=txt;return n}
+// Fotos no topo do painel: uma só, ou galeria de arrastar com bolinhas.
+function photos(box,srcs,alt){box.innerHTML='';if(!srcs.length)return;
+var gal=el('div',srcs.length>1?'gal':'');srcs.forEach(function(src,k){var m=el('img');m.src=src;m.alt=alt;if(k)m.loading='lazy';gal.appendChild(m)});box.appendChild(gal);
+if(srcs.length<2)return;var dots=el('div','dots');srcs.forEach(function(_,k){dots.appendChild(el('i',k?'':'on'))});box.appendChild(dots);
+gal.addEventListener('scroll',function(){var n=Math.round(gal.scrollLeft/gal.clientWidth);$$('i',dots).forEach(function(d,j){d.classList.toggle('on',j===n)})})}
 var sheet=$('#sheet'),c=$('.c',sheet),ph=$('.ph',sheet);
 function openCard(card){
-var img=$('img,.noimg',card);ph.innerHTML='';
+var img=$('img,.noimg',card);
 var more=(card.getAttribute('data-more')||'').split('|').filter(Boolean);
-if(img&&more.length){var gal=el('div','gal'),dots=el('div','dots');gal.appendChild(img.cloneNode(true));more.forEach(function(src){var m=el('img');m.src=src;m.alt=img.alt;m.loading='lazy';gal.appendChild(m)});
-for(var k=0;k<=more.length;k++)dots.appendChild(el('i',k?'':'on'));
-gal.addEventListener('scroll',function(){var n=Math.round(gal.scrollLeft/gal.clientWidth);$$('i',dots).forEach(function(d,j){d.classList.toggle('on',j===n)})});
-ph.appendChild(gal);ph.appendChild(dots)}
-else if(img)ph.appendChild(img.cloneNode(true));
+if(img&&img.tagName==='IMG')photos(ph,[img.getAttribute('src')].concat(more),img.alt);
+else{ph.innerHTML='';if(img)ph.appendChild(img.cloneNode(true))}
 $('h2',c).textContent=$('h2',card).textContent;
 var p=$('.b p',card),cp=$('p',c);cp.textContent=p?p.textContent:'';cp.hidden=!p;
 $('.price',c).textContent=$('.price',card).textContent;
@@ -230,6 +233,7 @@ function open(g){
 S.g=g;S.o=0;S.cv=[];S.ex=[];S.qty=1;what.value='';txt.value='';cm.value='';when.value='';det.value='';
 var free=g<0,G=free?null:E.groups[g];
 $('#fn').textContent=free?'Outra ideia':'Orçamento: '+G.name;
+drawPhotos();
 $('#fsub').textContent=free?'Conte o que você imagina. Eu avalio se dá pra fazer e te passo o preço e o prazo.':(G.desc||'');
 $('#f-what').hidden=!free;$('#f-cm').hidden=!free;$('#f-text').hidden=free;
 var sizes=free?[]:G.options;$('#f-size').hidden=sizes.length<2;
@@ -237,7 +241,9 @@ if(sizes.length>1)drawSizes();
 drawColors();drawExtras();$('#qty').textContent='1';when.min=today();
 show(form);render();
 }
-function drawSizes(){chips($('#sizes'),E.groups[S.g].options.map(function(o){return {label:(o.size||'Único')+' · '+brl(o.price)}}),function(i){return i===S.o},function(i){S.o=i;drawSizes();drawColors();drawExtras();render()})}
+function drawSizes(){chips($('#sizes'),E.groups[S.g].options.map(function(o){return {label:(o.size||'Único')+' · '+brl(o.price)}}),function(i){return i===S.o},function(i){S.o=i;drawSizes();drawPhotos();drawColors();drawExtras();render()})}
+// Fotos do tamanho escolhido; sem foto nele, as do primeiro que tiver.
+function drawPhotos(){var G=S.g<0?null:E.groups[S.g],o=opt(),list=!G?[]:(o.photos.length?o.photos:(G.options.filter(function(x){return x.photos.length})[0]||{photos:[]}).photos);photos($('#fph'),list,G?G.name:'');form.classList.toggle('has-ph',list.length>0)}
 function render(){
 var free=S.g<0,lines=[],box=[];
 var c1=parseFloat((cm.value||'').replace(',','.'));
