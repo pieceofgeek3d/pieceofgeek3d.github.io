@@ -71,29 +71,72 @@ footer a{font-weight:600;color:var(--fg);text-decoration:none;white-space:nowrap
 .sheet p{margin:0 0 10px;color:var(--muted)}
 .sheet .price{font-size:1.4rem;margin-bottom:12px}
 .sheet .wa{padding:12px;font-size:1rem}
+.shopee{display:inline-flex;align-items:center;gap:8px;margin-top:14px;background:#fff;color:#EE4D2D;font-weight:800;text-decoration:none;padding:9px 14px;border-radius:999px;font-size:.9rem}
+.shopee b{background:#EE4D2D;color:#fff;border-radius:6px;padding:1px 6px;font-size:.75rem}
+.sheet .shp{display:block;text-align:center;margin-top:8px;border:1.5px solid #EE4D2D;color:#EE4D2D;font-weight:700;text-decoration:none;padding:11px;border-radius:10px}
+.sheet .only{margin:10px 0 0;font-size:.82rem;text-align:center}
+.pedir{margin-top:14px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px}
+.pedir h2{margin:0;font-size:1.1rem}
+.pedir>p{margin:4px 0 12px;color:var(--muted);font-size:.88rem}
+.cgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+@media (min-width:640px){.cgrid{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}}
+.ctile{font:inherit;color:inherit;text-align:left;padding:0;cursor:pointer;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--bg);display:flex;flex-direction:column}
+.ctile img,.ctile .noimg{width:100%;aspect-ratio:1.2;object-fit:cover;display:flex}
+.ct{display:flex;flex-direction:column;gap:3px;padding:8px 9px 10px;flex:1}
+.ct b{font-size:.88rem;line-height:1.2}
+.ct .cd{color:var(--muted);font-size:.74rem;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.ct em{font-style:normal;font-weight:800;font-size:.9rem;margin-top:auto;padding-top:2px}
+.cta{display:block;text-align:center;border:1.5px solid var(--accent);color:var(--accent);font-weight:700;font-size:.8rem;border-radius:9px;padding:6px;margin-top:4px}
+.other{display:block;width:100%;margin-top:10px;font:inherit;font-weight:700;font-size:.9rem;color:var(--accent);background:transparent;border:1.5px dashed var(--line);border-radius:12px;padding:10px;cursor:pointer}
+.other small{display:block;font-weight:500;color:var(--muted);font-size:.78rem;margin-top:2px}
+.form .fld{margin-top:10px}
+.form .fld[hidden]{display:none}
+.form label,.form .lb{display:block;font-size:.8rem;font-weight:700;color:var(--muted);margin-bottom:4px}
+.form input,.form textarea{display:block;width:100%;font:inherit;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.form input[hidden]{display:none}
+.form textarea{resize:vertical}
+.form .bad{border-color:#D93025}
+.form .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.sel{display:flex;gap:6px;flex-wrap:wrap}
+.sel[hidden]{display:none}
+.opt{font:inherit;font-size:.82rem;font-weight:600;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:6px 11px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.opt i{width:12px;height:12px;border-radius:50%;border:1px solid rgba(128,128,128,.5)}
+.opt.on{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.qty{display:flex;align-items:center;border:1px solid var(--line);border-radius:10px;background:var(--bg);overflow:hidden}
+.qty button{font:inherit;font-size:1.2rem;width:44px;height:42px;border:0;background:transparent;color:var(--fg);cursor:pointer}
+.qty span{flex:1;text-align:center;font-weight:700}
+.sum{margin-top:12px;background:var(--bg);border-radius:10px;padding:10px 12px;font-size:.9rem;line-height:1.5}
+.sum:empty{display:none}
+.warn{color:#D93025;font-size:.82rem}
+@media (prefers-color-scheme:dark){.warn{color:#FF8A80}}
+.form .hint{margin:10px 0 12px;font-size:.8rem}
+.ctile:focus-visible,.other:focus-visible,.opt:focus-visible,.shopee:focus-visible,.shp:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
 .x{position:absolute;top:10px;right:10px;width:36px;height:36px;border-radius:50%;border:0;background:rgba(0,0,0,.55);color:#fff;font-size:1.3rem;line-height:1;cursor:pointer}
 </style>
 </head><body>
 <header class="top"><div class="wrap"><img class="logo" src="logo.jpg?v=610adf78" alt=""><span class="name">Piece of Geek 3D</span></div></header>
 <section class="hero"><div class="wrap"><h1>Peças impressas em 3D sob encomenda</h1><p>Escolha o produto e peça pelo WhatsApp. Cada peça é feita pra você.</p>
-<div class="badges"><span>Pagamento por Pix</span><span>Pedido pelo WhatsApp</span><span>Feito sob encomenda</span></div></div></section>
+<div class="badges"><span>Pagamento por Pix</span><span>Pedido pelo WhatsApp</span><span>Feito sob encomenda</span></div><a class="shopee" href="https://br.shp.ee/xDLbyULB" target="_blank" rel="noopener"><b>Shopee</b>Mora longe? Compre lá</a></div></section>
 <main class="wrap">
 <label class="search"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M10 2a8 8 0 0 1 6.3 12.9l5.4 5.4-1.4 1.4-5.4-5.4A8 8 0 1 1 10 2Zm0 2a6 6 0 1 0 0 12 6 6 0 0 0 0-12Z"/></svg><input id="q" type="search" placeholder="Buscar produto" aria-label="Buscar produto" autocomplete="off"></label>
 
-<div class="grid"><article class="card" data-cat="c0" data-s="miniatura buda miniatura buda em pla velvet branco, acabamento fosco. traz calma para mesas, estantes e cantinhos de meditacao. 7,5 x 5,8 x 4 cm." tabindex="0"><img src="fotos/w0rgpjgk4luw.jpg?v=831d1ee0" alt="Miniatura Buda" loading="lazy"><div class="b"><h2>Miniatura Buda</h2><p>Buda em PLA Velvet branco, acabamento fosco. Traz calma para mesas, estantes e cantinhos de meditação. 7,5 x 5,8 x 4 cm.</p>
+<div class="grid"><article class="card" data-cat="c0" data-s="miniatura buda miniatura buda em pla velvet branco, acabamento fosco. traz calma para mesas, estantes e cantinhos de meditacao. 7,5 x 5,8 x 4 cm." data-shopee="https://br.shp.ee/KsnvDN7h" tabindex="0"><img src="fotos/w0rgpjgk4luw.jpg?v=831d1ee0" alt="Miniatura Buda" loading="lazy"><div class="b"><h2>Miniatura Buda</h2><p>Buda em PLA Velvet branco, acabamento fosco. Traz calma para mesas, estantes e cantinhos de meditação. 7,5 x 5,8 x 4 cm.</p>
 <div class="price">R$ 15,00</div><a class="wa" href="https://wa.me/5511992965296?text=Ol%C3%A1!%20Vi%20na%20loja%20e%20quero%20o%20Miniatura%20Buda%20(R%24%C2%A015%2C00)." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>Pedir</a></div></article>
 <article class="card" data-cat="c0" data-s="miniatura deus grego miniatura inspirada nas esculturas classicas, com detalhes no rosto, barba e manto. pla velvet
 
-branco fosco. 13,3 × 5,8 × 4,8 cm." tabindex="0"><img src="fotos/ddhy8tspbda2.jpg?v=4312550d" alt="Miniatura Deus Grego" loading="lazy"><div class="b"><h2>Miniatura Deus Grego</h2><p>Inspirada nas esculturas clássicas, com detalhes no rosto, barba e manto. PLA Velvet
+branco fosco. 13,3 × 5,8 × 4,8 cm." data-shopee="https://br.shp.ee/zkX2EpPQ" tabindex="0"><img src="fotos/ddhy8tspbda2.jpg?v=4312550d" alt="Miniatura Deus Grego" loading="lazy"><div class="b"><h2>Miniatura Deus Grego</h2><p>Inspirada nas esculturas clássicas, com detalhes no rosto, barba e manto. PLA Velvet
 
 branco fosco. 13,3 × 5,8 × 4,8 cm.</p>
 <div class="price">R$ 20,00</div><a class="wa" href="https://wa.me/5511992965296?text=Ol%C3%A1!%20Vi%20na%20loja%20e%20quero%20o%20Miniatura%20Deus%20Grego%20(R%24%C2%A020%2C00)." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>Pedir</a></div></article>
 <article class="card" data-cat="c0" data-s="miniatura nossa senhora aparecida miniatura com menino jesus, manto em relevo, coroas e terco. otima para oratorios e presentes de batizado ou crisma. pla branco.
 
-8 x 7 x 4 cm." tabindex="0"><img src="fotos/5navhdnf16yq.jpg?v=71b4bccf" alt="Miniatura Nossa Senhora Aparecida" loading="lazy"><div class="b"><h2>Miniatura Nossa Senhora Aparecida</h2><p>Com Menino Jesus, manto em relevo, coroas e terço. Ótima para oratórios e presentes de batizado ou crisma. PLA branco.
+8 x 7 x 4 cm." data-shopee="https://br.shp.ee/fccMpR6j" tabindex="0"><img src="fotos/5navhdnf16yq.jpg?v=71b4bccf" alt="Miniatura Nossa Senhora Aparecida" loading="lazy"><div class="b"><h2>Miniatura Nossa Senhora Aparecida</h2><p>Com Menino Jesus, manto em relevo, coroas e terço. Ótima para oratórios e presentes de batizado ou crisma. PLA branco.
 
 8 x 7 x 4 cm.</p>
 <div class="price">R$ 20,00</div><a class="wa" href="https://wa.me/5511992965296?text=Ol%C3%A1!%20Vi%20na%20loja%20e%20quero%20o%20Miniatura%20Nossa%20Senhora%20Aparecida%20(R%24%C2%A020%2C00)." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>Pedir</a></div></article></div><p class="empty" id="none" hidden>Nenhum produto encontrado.</p>
+<section class="pedir" id="encomenda"><h2>Peça do seu jeito</h2><p>Tem uma ideia? Eu faço com o seu nome, a sua cor e a sua data. Escolha um exemplo e me conte como quer.</p>
+
+<button type="button" class="other" data-g="-1">Me conte a sua ideia →<small>Valor médio de R$ 0,70 por grama</small></button></section>
 <section class="how"><h2>Como comprar</h2><ol>
 <li><i>1</i><span>Escolha o produto e toque em <b>Pedir</b>.</span></li>
 <li><i>2</i><span>Combine cor, quantidade e entrega pelo WhatsApp.</span></li>
@@ -103,35 +146,109 @@ branco fosco. 13,3 × 5,8 × 4,8 cm.</p>
 <footer class="wrap"><a href="https://wa.me/5511992965296?text=Ol%C3%A1!%20Vi%20a%20loja%20Piece%20of%20Geek%203D%20e%20quero%20fazer%20um%20pedido." target="_blank" rel="noopener">WhatsApp (11) 99296-5296</a><br>Preços atualizados em 24/10/2026</footer>
 <a class="fab" href="https://wa.me/5511992965296?text=Ol%C3%A1!%20Vi%20a%20loja%20Piece%20of%20Geek%203D%20e%20quero%20fazer%20um%20pedido." target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg></a>
 <div class="sheet" id="sheet" hidden><div class="in" role="dialog" aria-modal="true" aria-labelledby="sn"><button class="x" type="button" aria-label="Fechar">×</button><div class="ph"></div><div class="c"><h2 id="sn"></h2><p></p><div class="price"></div></div></div></div>
-<script>
-(function(){
-var cards=[].slice.call(document.querySelectorAll('.card')),none=document.getElementById('none'),q='',f='';
-function plain(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'')}
+<div class="sheet" id="form" hidden><div class="in" role="dialog" aria-modal="true" aria-labelledby="fn"><button class="x" type="button" aria-label="Fechar">×</button><div class="c form">
+<h2 id="fn"></h2><p id="fsub"></p>
+<div class="fld" id="f-size"><span class="lb">Tamanho</span><div class="sel" id="sizes"></div></div>
+<div class="fld" id="f-what"><label for="what">O que você quer?</label><textarea id="what" rows="3" placeholder="Ex: suporte de controle de videogame pra parede"></textarea></div>
+<div class="fld" id="f-text"><label for="txt">Nome ou texto</label><input id="txt" autocomplete="off" placeholder="Ex: PEDRO"></div>
+<div class="fld" id="f-cm"><label for="cm">Tamanho aproximado (cm)</label><input id="cm" type="number" inputmode="decimal" min="1" placeholder="Ex: 12"><small class="warn" id="cmw" hidden>Maior que 18 cm não cabe inteiro na impressora. Dá pra fazer em partes; a gente combina na conversa.</small></div>
+<div class="fld"><span class="lb">Cor</span><div class="sel" id="colors"></div><input id="colorTxt" autocomplete="off" placeholder="Ex: azul"></div>
+<div class="row"><div class="fld"><span class="lb">Quantidade</span><div class="qty"><button type="button" data-d="-1" aria-label="Menos">−</button><span id="qty">1</span><button type="button" data-d="1" aria-label="Mais">+</button></div></div>
+<div class="fld"><label for="when">Pra quando?</label><input id="when" type="date"></div></div>
+<div class="fld"><label for="det">Algum detalhe? (opcional)</label><textarea id="det" rows="2" placeholder="Ex: com estrelinha do lado"></textarea></div>
+<div class="sum" id="sum"></div>
+<p class="hint">Tem foto de referência? Mande na conversa depois de enviar.</p>
+<a class="wa" id="send" href="https://wa.me/5511992965296?text=" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>Enviar pelo WhatsApp</a>
+</div></div></div>
+<script type="application/json" id="enc-data">{"groups":[],"colors":[{"name":"PLA Velvet Azul","hex":"#1565C0"},{"name":"PLA Velvet Branco","hex":"#F2F2F2"},{"name":"PLA Velvet Preto","hex":"#222222"}],"gram":0.7,"maxCm":18,"today":"2026-10-24","wa":"https://wa.me/5511992965296?text=","queueH":0,"perDay":8}</script>
+<script>(function(){
+function $(s,r){return (r||document).querySelector(s)}
+function $$(s,r){return [].slice.call((r||document).querySelectorAll(s))}
+var cards=$$('.card'),none=$('#none'),q='',f='';
+function plain(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')}
 function apply(){var n=0;cards.forEach(function(c){var ok=(!f||c.getAttribute('data-cat')===f)&&(!q||c.getAttribute('data-s').indexOf(q)>=0);c.hidden=!ok;if(ok)n++});if(none)none.hidden=n>0}
-var input=document.getElementById('q');
+var input=$('#q');
 if(input)input.addEventListener('input',function(){q=plain(input.value.trim());apply()});
-document.querySelectorAll('.chip').forEach(function(b){b.addEventListener('click',function(){f=b.getAttribute('data-f');document.querySelectorAll('.chip').forEach(function(x){x.classList.toggle('on',x===b)});apply()})});
-var sheet=document.getElementById('sheet'),c=sheet.querySelector('.c'),ph=sheet.querySelector('.ph'),opened=false;
-function hide(){sheet.hidden=true;document.body.classList.remove('lock');opened=false}
-function close(){if(opened&&history.state&&history.state.produto)history.back();else hide()}
-function open(card){
-var img=card.querySelector('img,.noimg');ph.innerHTML='';if(img)ph.appendChild(img.cloneNode(true));
-c.querySelector('h2').textContent=card.querySelector('h2').textContent;
-var p=card.querySelector('.b p');c.querySelector('p').textContent=p?p.textContent:'';c.querySelector('p').hidden=!p;
-c.querySelector('.price').textContent=card.querySelector('.price').textContent;
-var old=c.querySelector('.wa');if(old)old.remove();var wa=card.querySelector('.wa');
-if(wa){var a=wa.cloneNode(true);a.lastChild.textContent='Pedir pelo WhatsApp';c.appendChild(a)}
-sheet.hidden=false;document.body.classList.add('lock');
-if(!opened){history.pushState({produto:1},'');opened=true}
-sheet.querySelector('.x').focus();
+$$('.chip').forEach(function(b){b.addEventListener('click',function(){f=b.getAttribute('data-f');$$('.chip').forEach(function(x){x.classList.toggle('on',x===b)});apply()})});
+var cur=null,pushed=false;
+function show(el){if(cur&&cur!==el)cur.hidden=true;cur=el;el.hidden=false;el.querySelector('.in').scrollTop=0;document.body.classList.add('lock');if(!pushed){history.pushState({painel:1},'');pushed=true}$('.x',el).focus()}
+function hide(){if(cur)cur.hidden=true;cur=null;pushed=false;document.body.classList.remove('lock')}
+function close(){if(pushed&&history.state&&history.state.painel)history.back();else hide()}
+window.addEventListener('popstate',function(){if(cur)hide()});
+$$('.sheet').forEach(function(s){s.addEventListener('click',function(e){if(e.target===s||e.target.closest('.x'))close()})});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&cur)close()});
+function el(tag,cls,txt){var n=document.createElement(tag);if(cls)n.className=cls;if(txt!=null)n.textContent=txt;return n}
+var sheet=$('#sheet'),c=$('.c',sheet),ph=$('.ph',sheet);
+function openCard(card){
+var img=$('img,.noimg',card);ph.innerHTML='';if(img)ph.appendChild(img.cloneNode(true));
+$('h2',c).textContent=$('h2',card).textContent;
+var p=$('.b p',card),cp=$('p',c);cp.textContent=p?p.textContent:'';cp.hidden=!p;
+$('.price',c).textContent=$('.price',card).textContent;
+$$('.wa,.shp,.only',c).forEach(function(n){n.remove()});
+var wa=$('.wa',card);if(wa){var a=wa.cloneNode(true);a.lastChild.textContent='Pedir pelo WhatsApp';c.appendChild(a)}
+var shp=card.getAttribute('data-shopee');
+if(shp){var s=el('a','shp','Comprar na Shopee');s.href=shp;s.target='_blank';s.rel='noopener';c.appendChild(s);c.appendChild(el('p','only','Mora longe? Na Shopee o preço pode ser outro por causa das taxas.'))}
+else if(card.hasAttribute('data-only'))c.appendChild(el('p','only','Disponível só aqui na loja.'));
+show(sheet);
 }
 cards.forEach(function(card){
-card.addEventListener('click',function(e){if(!e.target.closest('.wa'))open(card)});
-card.addEventListener('keydown',function(e){if(e.key==='Enter'&&!e.target.closest('.wa'))open(card)});
+card.addEventListener('click',function(e){if(!e.target.closest('.wa'))openCard(card)});
+card.addEventListener('keydown',function(e){if(e.key==='Enter'&&!e.target.closest('.wa'))openCard(card)});
 });
-sheet.addEventListener('click',function(e){if(e.target===sheet||e.target.closest('.x'))close()});
-document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!sheet.hidden)close()});
-window.addEventListener('popstate',function(){if(!sheet.hidden)hide()});
-})();
-</script>
+var form=$('#form'),dataEl=$('#enc-data');
+if(!form||!dataEl)return;
+var E=JSON.parse(dataEl.textContent),S={g:-1,o:0,color:'',qty:1};
+function pad(n){return (n<10?'0':'')+n}
+function isoOf(d){return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate())}
+function addDays(iso,n){var d=new Date(iso+'T12:00:00');d.setDate(d.getDate()+n);return isoOf(d)}
+function br(iso){var p=iso.split('-');return p[2]+'/'+p[1]}
+function brl(v){var s=v.toFixed(2).split('.');return 'R$ '+s[0].replace(/\B(?=(\d{3})+$)/g,'.')+','+s[1]}
+function today(){var t=isoOf(new Date());return t>E.today?t:E.today}
+function ready(h){return addDays(today(),Math.max(1,Math.ceil((E.queueH+h)/E.perDay)))}
+var what=$('#what'),txt=$('#txt'),cm=$('#cm'),cmw=$('#cmw'),colorTxt=$('#colorTxt'),when=$('#when'),det=$('#det'),sum=$('#sum'),send=$('#send');
+function chips(box,list,on,pick){box.innerHTML='';list.forEach(function(it,i){var b=el('button','opt'+(i===on?' on':''));b.type='button';if(it.hex){var dot=el('i');dot.style.background=it.hex;b.appendChild(dot)}b.appendChild(document.createTextNode(it.label));b.addEventListener('click',function(){pick(i)});box.appendChild(b)})}
+function drawColors(){var list=E.colors.map(function(x){return {label:x.name,hex:x.hex}});colorTxt.hidden=!!list.length;$('#colors').hidden=!list.length;chips($('#colors'),list,E.colors.findIndex(function(x){return x.name===S.color}),function(i){S.color=E.colors[i].name;drawColors();render()})}
+function open(g){
+S.g=g;S.o=0;S.color='';S.qty=1;what.value='';txt.value='';cm.value='';colorTxt.value='';when.value='';det.value='';
+var free=g<0,G=free?null:E.groups[g];
+$('#fn').textContent=free?'Outra ideia':'Orçamento: '+G.name;
+$('#fsub').textContent=free?'Conte o que você imagina. Eu avalio se dá pra fazer e te passo o preço e o prazo.':(G.desc||'');
+$('#f-what').hidden=!free;$('#f-cm').hidden=!free;$('#f-text').hidden=free;
+var sizes=free?[]:G.options;$('#f-size').hidden=sizes.length<2;
+if(sizes.length>1)drawSizes();
+drawColors();$('#qty').textContent='1';when.min=today();
+show(form);render();
+}
+function drawSizes(){chips($('#sizes'),E.groups[S.g].options.map(function(o){return {label:(o.size||'Único')+' · '+brl(o.price)}}),S.o,function(i){S.o=i;drawSizes();render()})}
+function color(){return S.color||colorTxt.value.trim()}
+function render(){
+var free=S.g<0,lines=[],box=[];
+var c1=parseFloat((cm.value||'').replace(',','.'));
+cmw.hidden=!(free&&c1>E.maxCm);
+if(free){
+box.push(E.gram>0?'Valor médio: <b>'+brl(E.gram)+' por grama</b> de filamento. Uma peça de 50 g sai por volta de '+brl(E.gram*50)+'.':'Eu avalio a ideia e te passo o preço e o prazo.');
+lines.push('Olá! Tenho uma ideia de peça personalizada:');lines.push('• O que é: '+(what.value.trim()||'-'));
+if(c1>0)lines.push('• Tamanho aproximado: '+c1+' cm');
+}else{
+var G=E.groups[S.g],o=G.options[S.o],r=ready(o.hours*S.qty);
+box.push('<b>Total estimado: '+brl(o.price*S.qty)+'</b>'+(S.qty>1?' ('+S.qty+' × '+brl(o.price)+')':''));
+box.push('Fica pronto a partir de <b>'+br(r)+'</b>.');
+if(when.value&&when.value<r)box.push('<span class="warn">Pra '+br(when.value)+' não dá tempo. O mais cedo é '+br(r)+'.</span>');
+lines.push('Olá! Quero uma encomenda personalizada:');lines.push('• '+G.name+(o.size?' ('+o.size+')':''));
+if(txt.value.trim())lines.push('• Texto: '+txt.value.trim());
+}
+if(color())lines.push('• Cor: '+color());
+lines.push('• Quantidade: '+S.qty);
+if(when.value)lines.push('• Pra quando: '+br(when.value));
+if(det.value.trim())lines.push('• Detalhes: '+det.value.trim());
+if(!free)lines.push('Valor estimado no site: '+brl(G.options[S.o].price*S.qty)+', pronto a partir de '+br(ready(G.options[S.o].hours*S.qty))+'.');
+sum.innerHTML=box.join('<br>');
+send.href=E.wa+encodeURIComponent(lines.join('\n'));
+}
+$$('.qty button',form).forEach(function(b){b.addEventListener('click',function(){S.qty=Math.max(1,Math.min(999,S.qty+Number(b.getAttribute('data-d'))));$('#qty').textContent=String(S.qty);render()})});
+[what,txt,cm,colorTxt,when,det].forEach(function(i){i.addEventListener('input',render)});
+send.addEventListener('click',function(e){if(S.g<0&&!what.value.trim()){e.preventDefault();what.classList.add('bad');what.focus()}});
+what.addEventListener('input',function(){what.classList.remove('bad')});
+$$('[data-g]').forEach(function(b){b.addEventListener('click',function(){open(Number(b.getAttribute('data-g')))})});
+})();</script>
 </body></html>
