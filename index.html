@@ -11,48 +11,127 @@
 <meta property="og:image" content="https://pieceofgeek3d.github.io/fotos/w0rgpjgk4luw.jpg">
 <meta name="theme-color" content="#C2461C">
 <style>
-:root{--bg:#F5F6F8;--card:#FFFFFF;--fg:#1A1D23;--muted:#5D6270;--line:#E4E6EB;--accent:#C2461C;--wa:#1A9E50;--chip:#FFFFFF}
-@media (prefers-color-scheme:dark){:root{--bg:#141518;--card:#1E2025;--fg:#ECEDEF;--muted:#A2A6B0;--line:#2E3138;--accent:#E8683A;--wa:#1FA855;--chip:#1E2025;color-scheme:dark}}
+:root{--bg:#F5F6F8;--card:#FFFFFF;--fg:#1A1D23;--muted:#5D6270;--line:#E4E6EB;--accent:#C2461C;--accent2:#E0622F;--wa:#1A9E50;--bar:rgba(245,246,248,.94)}
+@media (prefers-color-scheme:dark){:root{--bg:#141518;--card:#1E2025;--fg:#ECEDEF;--muted:#A2A6B0;--line:#2E3138;--accent:#E8683A;--accent2:#C2461C;--wa:#1FA855;--bar:rgba(20,21,24,.94);color-scheme:dark}}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--fg);font-family:-apple-system,BlinkMacSystemFont,Roboto,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-size:15px;line-height:1.45}
+body.lock{overflow:hidden}
+a{color:inherit}
 .wrap{max-width:1040px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left));padding-right:max(16px,env(safe-area-inset-right))}
-header{background:var(--accent);color:#fff;padding-top:env(safe-area-inset-top)}
-header .wrap{padding-block:26px 22px}
-header h1{margin:0;font-size:1.75rem;line-height:1.15;letter-spacing:-.01em}
-header p{margin:6px 0 0;opacity:.92}
-header .hi{display:inline-block;margin-top:14px;background:#fff;color:var(--accent);font-weight:700;text-decoration:none;padding:9px 16px;border-radius:999px}
-.chips{display:flex;gap:8px;overflow-x:auto;padding-block:16px 4px;scrollbar-width:none}
-.chip{flex:none;font:inherit;font-size:.875rem;font-weight:600;color:var(--fg);background:var(--chip);border:1px solid var(--line);border-radius:999px;padding:7px 14px;cursor:pointer}
+.top{position:sticky;top:0;z-index:3;background:var(--bar);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top)}
+.top .wrap{display:flex;align-items:center;gap:10px;padding-block:10px}
+.logo{width:36px;height:36px;border-radius:50%;flex:none;object-fit:cover;background:var(--accent);color:#fff;font-weight:900;font-size:.8rem;display:flex;align-items:center;justify-content:center}
+.top .name{flex:1;font-weight:800;font-size:1rem;line-height:1.2;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.top .ig{flex:none;font-size:.8rem;font-weight:600;text-decoration:none;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:6px 12px}
+.hero{background:linear-gradient(135deg,var(--accent2),var(--accent));color:#fff}
+.hero .wrap{padding-block:22px 20px}
+.hero h1{margin:0;font-size:1.55rem;line-height:1.15;letter-spacing:-.01em}
+.hero p{margin:6px 0 14px;opacity:.95}
+.badges{display:flex;flex-wrap:wrap;gap:6px}
+.badges span{background:rgba(255,255,255,.2);border-radius:999px;padding:5px 10px;font-size:.78rem;font-weight:600}
+.search{display:flex;align-items:center;gap:8px;margin-top:14px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0 12px}
+.search svg{width:18px;height:18px;flex:none;color:var(--muted)}
+.search input{flex:1;min-width:0;font:inherit;color:var(--fg);background:transparent;border:0;outline:0;padding:11px 0}
+.search:focus-within{border-color:var(--accent)}
+.chips{display:flex;gap:8px;overflow-x:auto;padding-block:12px 2px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;font:inherit;font-size:.85rem;font-weight:600;color:var(--fg);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:7px 13px;cursor:pointer}
 .chip.on{background:var(--fg);color:var(--bg);border-color:var(--fg)}
-.chip:focus-visible,.wa:focus-visible,.hi:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;padding-block:12px 24px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.chip:focus-visible,.wa:focus-visible,.card:focus-visible,.top .ig:focus-visible,.fab:focus-visible,.x:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding-block:12px 8px}
+@media (min-width:640px){.grid{grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}}
+.card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;cursor:pointer}
 .card[hidden]{display:none}
 .card img,.noimg{width:100%;aspect-ratio:1;object-fit:cover;display:block;background:var(--line)}
 .noimg{display:flex;align-items:center;justify-content:center;font-size:2.5rem;font-weight:800;color:var(--muted)}
-.b{padding:10px 12px 12px;display:flex;flex-direction:column;gap:4px;flex:1}
-.b h2{margin:0;font-size:.95rem;line-height:1.25}
-.b p{margin:0;color:var(--muted);font-size:.8rem}
-.price{font-weight:800;font-size:1.1rem;margin-top:auto;padding-top:4px;font-variant-numeric:tabular-nums}
-.wa{display:block;text-align:center;background:var(--wa);color:#fff;font-weight:700;font-size:.85rem;text-decoration:none;padding:9px 8px;border-radius:10px}
-.empty{color:var(--muted);padding:32px 0;text-align:center}
-footer{color:var(--muted);font-size:.8rem;text-align:center;padding-block:8px calc(28px + env(safe-area-inset-bottom))}
+.tag{position:absolute;top:8px;left:8px;z-index:1;background:var(--accent);color:#fff;font-size:.68rem;font-weight:800;padding:3px 8px;border-radius:999px}
+.b{padding:9px 10px 10px;display:flex;flex-direction:column;gap:3px;flex:1}
+.b h2{margin:0;font-size:.92rem;line-height:1.25}
+.b p{margin:0;color:var(--muted);font-size:.78rem;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.price{font-weight:800;font-size:1.05rem;margin-top:auto;padding-top:4px;font-variant-numeric:tabular-nums}
+.wa{display:flex;align-items:center;justify-content:center;gap:6px;background:var(--wa);color:#fff;font-weight:700;font-size:.85rem;text-decoration:none;padding:9px 8px;border-radius:10px}
+.wa svg{width:17px;height:17px}
+.empty{color:var(--muted);padding:28px 0;text-align:center}
+.how{margin-top:12px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 14px 4px}
+.how h2{margin:0 0 10px;font-size:1rem}
+.how ol{list-style:none;margin:0;padding:0}
+.how li{display:flex;gap:10px;align-items:flex-start;margin-bottom:10px;font-size:.9rem}
+.how li i{font-style:normal;flex:none;width:24px;height:24px;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;font-size:.8rem;display:flex;align-items:center;justify-content:center}
+footer{color:var(--muted);font-size:.8rem;text-align:center;padding-block:18px calc(88px + env(safe-area-inset-bottom))}
+footer a{font-weight:600;color:var(--fg);text-decoration:none;white-space:nowrap}
+.fab{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:calc(18px + env(safe-area-inset-bottom));z-index:3;width:56px;height:56px;border-radius:50%;background:var(--wa);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.3)}
+.fab svg{width:30px;height:30px}
+.sheet{position:fixed;inset:0;z-index:5;display:flex;align-items:flex-end;justify-content:center;background:rgba(0,0,0,.6)}
+.sheet[hidden]{display:none}
+.sheet .in{position:relative;width:100%;max-width:560px;max-height:92vh;overflow-y:auto;background:var(--card);border-radius:18px 18px 0 0;padding-bottom:env(safe-area-inset-bottom)}
+@media (min-width:640px){.sheet{align-items:center}.sheet .in{border-radius:18px}}
+.sheet .ph img,.sheet .ph .noimg{width:100%;aspect-ratio:1.2;object-fit:cover;display:flex}
+.sheet .c{padding:14px 16px 20px}
+.sheet h2{margin:0 0 6px;font-size:1.2rem;line-height:1.25}
+.sheet p{margin:0 0 10px;color:var(--muted)}
+.sheet .price{font-size:1.4rem;margin-bottom:12px}
+.sheet .wa{padding:12px;font-size:1rem}
+.x{position:absolute;top:10px;right:10px;width:36px;height:36px;border-radius:50%;border:0;background:rgba(0,0,0,.55);color:#fff;font-size:1.3rem;line-height:1;cursor:pointer}
 </style>
 </head><body>
-<header><div class="wrap"><h1>Piece of Geek 3D</h1><p>Peças impressas em 3D sob encomenda. Escolha e peça pelo WhatsApp.</p><a class="hi" href="https://wa.me/5511992965296?text=Ol%C3%A1!%20Vi%20a%20loja%20Piece%20of%20Geek%203D%20e%20quero%20fazer%20um%20pedido." target="_blank" rel="noopener">Falar no WhatsApp</a></div></header>
+<header class="top"><div class="wrap"><img class="logo" src="logo.jpg?v=610adf78" alt=""><span class="name">Piece of Geek 3D</span></div></header>
+<section class="hero"><div class="wrap"><h1>Peças impressas em 3D sob encomenda</h1><p>Escolha o produto e peça pelo WhatsApp. Cada peça é feita pra você.</p>
+<div class="badges"><span>Pagamento por Pix</span><span>Pedido pelo WhatsApp</span><span>Feito sob encomenda</span></div></div></section>
 <main class="wrap">
+<label class="search"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M10 2a8 8 0 0 1 6.3 12.9l5.4 5.4-1.4 1.4-5.4-5.4A8 8 0 1 1 10 2Zm0 2a6 6 0 1 0 0 12 6 6 0 0 0 0-12Z"/></svg><input id="q" type="search" placeholder="Buscar produto" aria-label="Buscar produto" autocomplete="off"></label>
 
-<div class="grid"><article class="card" data-cat="c0"><img src="fotos/w0rgpjgk4luw.jpg?v=831d1ee0" alt="Miniatura Budha" loading="lazy"><div class="b"><h2>Miniatura Budha</h2><p>Buda em PLA Velvet branco, acabamento fosco. Traz calma para mesas, estantes e cantinhos de meditação. 7,5 x 5,8 x 4 cm.</p>
-<div class="price">R$ 15,00</div><a class="wa" href="https://wa.me/5511992965296?text=Ol%C3%A1!%20Vi%20na%20loja%20e%20quero%20o%20Miniatura%20Budha%20(R%24%C2%A015%2C00)." target="_blank" rel="noopener">Pedir pelo WhatsApp</a></div></article>
-<article class="card" data-cat="c0"><img src="fotos/ddhy8tspbda2.jpg?v=4312550d" alt="Miniatura Deus Grego" loading="lazy"><div class="b"><h2>Miniatura Deus Grego</h2><p>Inspirada nas esculturas clássicas, com detalhes no rosto, barba e manto. PLA Velvet
+<div class="grid"><article class="card" data-cat="c0" data-s="miniatura buda miniatura buda em pla velvet branco, acabamento fosco. traz calma para mesas, estantes e cantinhos de meditacao. 7,5 x 5,8 x 4 cm." tabindex="0"><img src="fotos/w0rgpjgk4luw.jpg?v=831d1ee0" alt="Miniatura Buda" loading="lazy"><div class="b"><h2>Miniatura Buda</h2><p>Buda em PLA Velvet branco, acabamento fosco. Traz calma para mesas, estantes e cantinhos de meditação. 7,5 x 5,8 x 4 cm.</p>
+<div class="price">R$ 15,00</div><a class="wa" href="https://wa.me/5511992965296?text=Ol%C3%A1!%20Vi%20na%20loja%20e%20quero%20o%20Miniatura%20Buda%20(R%24%C2%A015%2C00)." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>Pedir</a></div></article>
+<article class="card" data-cat="c0" data-s="miniatura deus grego miniatura inspirada nas esculturas classicas, com detalhes no rosto, barba e manto. pla velvet
+
+branco fosco. 13,3 × 5,8 × 4,8 cm." tabindex="0"><img src="fotos/ddhy8tspbda2.jpg?v=4312550d" alt="Miniatura Deus Grego" loading="lazy"><div class="b"><h2>Miniatura Deus Grego</h2><p>Inspirada nas esculturas clássicas, com detalhes no rosto, barba e manto. PLA Velvet
 
 branco fosco. 13,3 × 5,8 × 4,8 cm.</p>
-<div class="price">R$ 20,00</div><a class="wa" href="https://wa.me/5511992965296?text=Ol%C3%A1!%20Vi%20na%20loja%20e%20quero%20o%20Miniatura%20Deus%20Grego%20(R%24%C2%A020%2C00)." target="_blank" rel="noopener">Pedir pelo WhatsApp</a></div></article>
-<article class="card" data-cat="c0"><img src="fotos/5navhdnf16yq.jpg?v=71b4bccf" alt="Miniatura Nossa Senhora Aparecida" loading="lazy"><div class="b"><h2>Miniatura Nossa Senhora Aparecida</h2><p>Com Menino Jesus, manto em relevo, coroas e terço. Ótima para oratórios e presentes de batizado ou crisma. PLA branco.
+<div class="price">R$ 20,00</div><a class="wa" href="https://wa.me/5511992965296?text=Ol%C3%A1!%20Vi%20na%20loja%20e%20quero%20o%20Miniatura%20Deus%20Grego%20(R%24%C2%A020%2C00)." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>Pedir</a></div></article>
+<article class="card" data-cat="c0" data-s="miniatura nossa senhora aparecida miniatura com menino jesus, manto em relevo, coroas e terco. otima para oratorios e presentes de batizado ou crisma. pla branco.
+
+8 x 7 x 4 cm." tabindex="0"><img src="fotos/5navhdnf16yq.jpg?v=71b4bccf" alt="Miniatura Nossa Senhora Aparecida" loading="lazy"><div class="b"><h2>Miniatura Nossa Senhora Aparecida</h2><p>Com Menino Jesus, manto em relevo, coroas e terço. Ótima para oratórios e presentes de batizado ou crisma. PLA branco.
 
 8 x 7 x 4 cm.</p>
-<div class="price">R$ 20,00</div><a class="wa" href="https://wa.me/5511992965296?text=Ol%C3%A1!%20Vi%20na%20loja%20e%20quero%20o%20Miniatura%20Nossa%20Senhora%20Aparecida%20(R%24%C2%A020%2C00)." target="_blank" rel="noopener">Pedir pelo WhatsApp</a></div></article></div>
+<div class="price">R$ 20,00</div><a class="wa" href="https://wa.me/5511992965296?text=Ol%C3%A1!%20Vi%20na%20loja%20e%20quero%20o%20Miniatura%20Nossa%20Senhora%20Aparecida%20(R%24%C2%A020%2C00)." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>Pedir</a></div></article></div><p class="empty" id="none" hidden>Nenhum produto encontrado.</p>
+<section class="how"><h2>Como comprar</h2><ol>
+<li><i>1</i><span>Escolha o produto e toque em <b>Pedir</b>.</span></li>
+<li><i>2</i><span>Combine cor, quantidade e entrega pelo WhatsApp.</span></li>
+<li><i>3</i><span>Pague por Pix e a sua peça entra na fila de impressão.</span></li>
+</ol></section>
 </main>
-<footer class="wrap">Pagamento por Pix · WhatsApp (11) 99296-5296<br>Preços atualizados em 23/10/2026</footer>
-
+<footer class="wrap"><a href="https://wa.me/5511992965296?text=Ol%C3%A1!%20Vi%20a%20loja%20Piece%20of%20Geek%203D%20e%20quero%20fazer%20um%20pedido." target="_blank" rel="noopener">WhatsApp (11) 99296-5296</a><br>Preços atualizados em 24/10/2026</footer>
+<a class="fab" href="https://wa.me/5511992965296?text=Ol%C3%A1!%20Vi%20a%20loja%20Piece%20of%20Geek%203D%20e%20quero%20fazer%20um%20pedido." target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg></a>
+<div class="sheet" id="sheet" hidden><div class="in" role="dialog" aria-modal="true" aria-labelledby="sn"><button class="x" type="button" aria-label="Fechar">×</button><div class="ph"></div><div class="c"><h2 id="sn"></h2><p></p><div class="price"></div></div></div></div>
+<script>
+(function(){
+var cards=[].slice.call(document.querySelectorAll('.card')),none=document.getElementById('none'),q='',f='';
+function plain(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'')}
+function apply(){var n=0;cards.forEach(function(c){var ok=(!f||c.getAttribute('data-cat')===f)&&(!q||c.getAttribute('data-s').indexOf(q)>=0);c.hidden=!ok;if(ok)n++});if(none)none.hidden=n>0}
+var input=document.getElementById('q');
+if(input)input.addEventListener('input',function(){q=plain(input.value.trim());apply()});
+document.querySelectorAll('.chip').forEach(function(b){b.addEventListener('click',function(){f=b.getAttribute('data-f');document.querySelectorAll('.chip').forEach(function(x){x.classList.toggle('on',x===b)});apply()})});
+var sheet=document.getElementById('sheet'),c=sheet.querySelector('.c'),ph=sheet.querySelector('.ph'),opened=false;
+function hide(){sheet.hidden=true;document.body.classList.remove('lock');opened=false}
+function close(){if(opened&&history.state&&history.state.produto)history.back();else hide()}
+function open(card){
+var img=card.querySelector('img,.noimg');ph.innerHTML='';if(img)ph.appendChild(img.cloneNode(true));
+c.querySelector('h2').textContent=card.querySelector('h2').textContent;
+var p=card.querySelector('.b p');c.querySelector('p').textContent=p?p.textContent:'';c.querySelector('p').hidden=!p;
+c.querySelector('.price').textContent=card.querySelector('.price').textContent;
+var old=c.querySelector('.wa');if(old)old.remove();var wa=card.querySelector('.wa');
+if(wa){var a=wa.cloneNode(true);a.lastChild.textContent='Pedir pelo WhatsApp';c.appendChild(a)}
+sheet.hidden=false;document.body.classList.add('lock');
+if(!opened){history.pushState({produto:1},'');opened=true}
+sheet.querySelector('.x').focus();
+}
+cards.forEach(function(card){
+card.addEventListener('click',function(e){if(!e.target.closest('.wa'))open(card)});
+card.addEventListener('keydown',function(e){if(e.key==='Enter'&&!e.target.closest('.wa'))open(card)});
+});
+sheet.addEventListener('click',function(e){if(e.target===sheet||e.target.closest('.x'))close()});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!sheet.hidden)close()});
+window.addEventListener('popstate',function(){if(!sheet.hidden)hide()});
+})();
+</script>
 </body></html>
