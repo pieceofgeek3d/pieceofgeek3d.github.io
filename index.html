@@ -44,6 +44,12 @@ a{color:inherit}
 @media (min-width:640px){.grid{grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}}
 .card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;cursor:pointer}
 .card[hidden]{display:none}
+.feat{margin-top:12px;background:linear-gradient(135deg,rgba(232,93,38,.16),rgba(232,93,38,.04));border:1px solid rgba(232,93,38,.35);border-radius:14px;padding:12px 0 12px 12px}
+.feat[hidden]{display:none}
+.feat h2{margin:0 12px 10px 0;font-size:1.05rem}
+.rail{display:grid;grid-auto-flow:column;grid-auto-columns:calc(50% - 14px);gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding-right:12px;scrollbar-width:none}
+.rail::-webkit-scrollbar{display:none}
+.rail .card{scroll-snap-align:start}
 .card img,.noimg{width:100%;aspect-ratio:1;object-fit:cover;display:block;background:var(--line)}
 .noimg{display:flex;align-items:center;justify-content:center;font-size:2.5rem;font-weight:800;color:var(--muted)}
 .tag{position:absolute;top:8px;left:8px;z-index:1;background:var(--accent);color:#fff;font-size:.68rem;font-weight:800;padding:3px 8px;border-radius:999px}
@@ -131,6 +137,7 @@ footer a{font-weight:600;color:var(--fg);text-decoration:none;white-space:nowrap
 <main class="wrap">
 <label class="search"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M10 2a8 8 0 0 1 6.3 12.9l5.4 5.4-1.4 1.4-5.4-5.4A8 8 0 1 1 10 2Zm0 2a6 6 0 1 0 0 12 6 6 0 0 0 0-12Z"/></svg><input id="q" type="search" placeholder="Buscar produto" aria-label="Buscar produto" autocomplete="off"></label>
 
+
 <div class="grid"><article class="card" id="miniatura-buda" data-cat="c0" data-s="miniatura buda decoracao buda em pla, acabamento fosco. traz calma para mesas, estantes e cantinhos de meditacao. 7,5 x 5,8 x 4 cm." data-shopee="https://br.shp.ee/KsnvDN7h" data-more="fotos/w0rgpjgk4luw-1.jpg?v=f5a425ac|fotos/w0rgpjgk4luw-2.jpg?v=1faa28fe" tabindex="0"><img src="fotos/w0rgpjgk4luw.jpg?v=831d1ee0" alt="Miniatura Buda" loading="lazy"><div class="b"><h2>Miniatura Buda</h2><p>Buda em PLA, acabamento fosco. Traz calma para mesas, estantes e cantinhos de meditação. 7,5 x 5,8 x 4 cm.</p>
 <div class="price">R$ 19,90</div><a class="wa" href="https://wa.me/5511992965296?text=Ol%C3%A1!%20Vi%20na%20loja%20e%20quero%20o%20Miniatura%20Buda%20(R%24%C2%A019%2C90).%0A%0AC%C3%B3digo%20do%20pedido%3A%203D1.p.w0rgpjgk4luw.1" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>Pedir</a><a class="shp" href="https://br.shp.ee/KsnvDN7h" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 7.5h15l-1 12.5a1.5 1.5 0 0 1-1.5 1.4H7a1.5 1.5 0 0 1-1.5-1.4Z"/><path d="M9 7.5V6a3 3 0 0 1 6 0v1.5"/><path d="M14 11.3c-.5-.5-1.2-.8-2-.8-1.1 0-2 .6-2 1.5 0 2 4 1.2 4 3.2 0 .9-.9 1.6-2 1.6-.9 0-1.7-.4-2.2-1"/></svg>Shopee</a></div></article>
 <article class="card" id="miniatura-deus-grego" data-cat="c0" data-s="miniatura deus grego decoracao inspirada nas esculturas classicas, com detalhes no rosto, barba e manto. pla fosco. 13,3 × 5,8 × 4,8 cm." data-shopee="https://br.shp.ee/zkX2EpPQ" data-more="fotos/ddhy8tspbda2-1.jpg?v=41648d16|fotos/ddhy8tspbda2-2.jpg?v=c0d39a9b" tabindex="0"><img src="fotos/ddhy8tspbda2.jpg?v=4312550d" alt="Miniatura Deus Grego" loading="lazy"><div class="b"><h2>Miniatura Deus Grego</h2><p>Inspirada nas esculturas clássicas, com detalhes no rosto, barba e manto. PLA fosco. 13,3 × 5,8 × 4,8 cm.</p>
@@ -172,9 +179,11 @@ footer a{font-weight:600;color:var(--fg);text-decoration:none;white-space:nowrap
 <script>(function(){
 function $(s,r){return (r||document).querySelector(s)}
 function $$(s,r){return [].slice.call((r||document).querySelectorAll(s))}
-var cards=$$('.card'),none=$('#none'),q='',f='';
+var cards=$$('.grid .card'),feats=$$('.feat'),none=$('#none'),q='',f='';
+function day(){var t=new Date(),m=t.getMonth()+1,n=t.getDate();return t.getFullYear()+'-'+(m<10?'0':'')+m+'-'+(n<10?'0':'')+n}
+var now=day();feats.forEach(function(s){var a=s.getAttribute('data-from'),b=s.getAttribute('data-until'),ok=!(a&&now<a||b&&now>b);s.hidden=!ok;if(ok)s.setAttribute('data-ok','')});
 function plain(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')}
-function apply(){var n=0;cards.forEach(function(c){var ok=(!f||c.getAttribute('data-cat')===f)&&(!q||c.getAttribute('data-s').indexOf(q)>=0);c.hidden=!ok;if(ok)n++});if(none)none.hidden=n>0}
+function apply(){var n=0;cards.forEach(function(c){var ok=(!f||c.getAttribute('data-cat')===f)&&(!q||c.getAttribute('data-s').indexOf(q)>=0);c.hidden=!ok;if(ok)n++});if(none)none.hidden=n>0;feats.forEach(function(s){s.hidden=!!(f||q)||!s.hasAttribute('data-ok')})}
 var input=$('#q');
 if(input)input.addEventListener('input',function(){q=plain(input.value.trim());apply()});
 $$('.chip').forEach(function(b){b.addEventListener('click',function(){f=b.getAttribute('data-f');$$('.chip').forEach(function(x){x.classList.toggle('on',x===b)});apply()})});
@@ -209,7 +218,7 @@ show(sheet);
 function track(n){var g=window.goatcounter;if(g&&g.count)try{g.count({path:n,title:n,event:true})}catch(e){}}
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href]');if(!a)return;var h=a.getAttribute('href');
 if(a.id==='send')track('encomenda');else if(/wa\.me\//.test(h))track('whatsapp');else if(/shopee|shp\.ee/.test(h))track('shopee')});
-cards.forEach(function(card){
+$$('.card').forEach(function(card){
 card.addEventListener('click',function(e){if(!e.target.closest('.wa,.shp')){openCard(card);track('ver-'+card.id)}});
 card.addEventListener('keydown',function(e){if(e.key==='Enter'&&!e.target.closest('.wa,.shp'))openCard(card)});
 });
